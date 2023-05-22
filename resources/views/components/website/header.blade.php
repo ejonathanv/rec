@@ -1,6 +1,6 @@
 <header class="bg-primary text-white py-3 website-header">
     <div class="container flex items-center justify-between">
-        <a href="#" class="logo">
+        <a href="{{ route('home') }}" class="logo">
             <img src="{{ asset('img/logo_restauremos_el_colorado.png') }}" 
                 alt="Restauremos el Colorado - Logo">
         </a>

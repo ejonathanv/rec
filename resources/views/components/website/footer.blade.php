@@ -2,7 +2,7 @@
     <div class="container">
         <div class="flex flex-col md:flex-row items-start space-y-7 md:space-y-0 md:space-x-7">
             <div class="w-full md:w-1/4">
-                <a href="#" class="logo inline-block mb-4">
+                <a href="{{ route('home') }}" class="logo inline-block mb-4">
                     <img src="{{ asset('img/logo_restauremos_el_colorado.png') }}" alt="Restauremos el Colorado - Logo">
                 </a>
                 <p class="small">
@@ -75,6 +75,15 @@
                         <a href="#">
                             <i class="fa fa-arrow-right"></i>
                             <span>Agroecología</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr class="my-4 border-secondary">
+                <ul class="text-sm list-links">
+                    <li>
+                        <a href="{{ route('login') }}">
+                            <i class="fa fa-arrow-right"></i>
+                            <span>Iniciar sesión</span>
                         </a>
                     </li>
                 </ul>

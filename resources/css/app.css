@@ -4,8 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    @apply bg-primary;
+}
 body{
     font-family: 'Figtree', sans-serif;
+    padding-top: 84px;
 }
 
 .main{
@@ -21,6 +25,17 @@ body{
         max-width: 100%;
         @apply w-full px-4;
     }
+}
+
+/* LINKS & BUTTONS */
+.btn{
+    @apply inline-block px-4 py-3 text-center;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Merriweather', serif;
+}
+
+.btn-primary{
+    @apply bg-primary text-white;
 }
 
 /* TITLES */
@@ -49,6 +64,9 @@ p.small{
 }
 
 /* WEBSITE HEADER */
+.website-header{
+    @apply fixed top-0 left-0 w-full z-50;
+}
 .website-header .logo{
     @apply inline-block;
 }
@@ -59,6 +77,7 @@ p.small{
 .website-nav a{
     @apply inline-block relative;
     transition: all 0.3s ease-in-out;
+    font-family: 'Merriweather', serif;
 }
 .website-nav a:before{
     content: '';

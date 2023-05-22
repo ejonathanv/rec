@@ -18,9 +18,7 @@
     <body class="text-gray-900 antialiased">
         <x-website.header></x-website.header>
         <main class="main">
-            <div class="container">
-                {{ $slot }}
-            </div>
+            {{ $slot }}
         </main>
         <x-website.footer></x-website.footer>
     </body>
