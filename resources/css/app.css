@@ -1,3 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    font-family: 'Figtree', sans-serif;
+}
+
+.main{
+    min-height: calc(100vh - 613px);
+}
+
+.container{
+    @apply w-10/12 mx-auto;
+}
+
+@media screen and (max-width: 1024px){
+    .container{
+        max-width: 100%;
+        @apply w-full px-4;
+    }
+}
+
+/* TITLES */
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Merriweather', serif;
+}
+h1{
+    @apply text-4xl font-bold;
+}
+h2{
+    @apply text-3xl font-bold;
+}
+h3{
+    @apply text-xl font-bold;
+}
+h4{
+    @apply text-lg font-bold;
+}
+
+/* PARAGRAPHS */
+p{
+    @apply text-base mb-4;
+}
+p.small{
+    @apply text-sm;
+}
+
+/* WEBSITE HEADER */
+.website-header .logo{
+    @apply inline-block;
+}
+.website-header .logo img{
+    height: 60px;
+    width: auto;
+}
+.website-nav a{
+    @apply inline-block relative;
+    transition: all 0.3s ease-in-out;
+}
+.website-nav a:before{
+    content: '';
+    height: 2px;
+    @apply absolute w-full bg-secondary -bottom-3 left-0 opacity-0;
+    transition: all 0.3s ease-in-out;
+}
+.website-nav a:hover{
+    @apply text-secondary;
+}
+.website-nav a:hover:before{
+    @apply opacity-100;
+}
+.website-mobile-nav .nav{
+    @apply fixed top-0 left-0 w-full h-full bg-primary z-10;
+}
+
+.website-mobile-nav .nav .logo{
+    @apply h-16;
+}
+
+.website-mobile-nav .nav a{
+    @apply block text-center text-white py-4 text-2xl;
+}
+
+.website-mobile-nav #mobile-nav-close-btn{
+    @apply absolute top-1 right-5 text-white text-4xl;
+}
+
+/* WEBSITE FOOTER */
+.website-footer{
+    @apply bg-dark text-white pt-10;
+}
+.website-footer .logo img{
+    height: 60px;
+    width: auto;
+}
+
+.list-links a{
+    @apply text-white flex items-center space-x-2;
+}
+.list-links a:hover{
+    @apply text-secondary;
+}
+.list-links a span{
+    @apply underline;
+}
+
+/* POSTS */
+.post-thumb{
+    @apply w-20 h-20 rounded-sm overflow-hidden bg-gray-300;
+}
