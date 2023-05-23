@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Restauremos el Colorado') }} @if($title) - {{ $title }} @endif</title>
+        <title>
+            @if($title) {{ $title }} - @endif
+            {{ config('app.name', 'Restauremos el Colorado') }}
+        </title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">

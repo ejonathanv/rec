@@ -1,3 +1,32 @@
+<section class="py-10 md:py-16 lg:py-20 bg-secondary-900">
+    <div class="container">
+        <h1 class="text-white text-center mb-6 md:mb-16">
+            Conoce a nuestros aliados
+        </h1>
+
+        <ul class="flex flex-wrap md:flex-nowrap md:flex-row items-center sponsors_logos justify-center">
+            <li class="w-1/3 px-2">
+                <img src="{{ asset('img/logos/mono/alianza_revive_el_rio_colorado.png') }}" alt="Alianza Revive el Río Colorado - Logo" class="w-full h-auto">
+            </li>
+            <li class="w-1/3 px-2">
+                <img src="{{ asset('img/logos/mono/audubon.png') }}" alt="Audubon - Logo" class="w-full h-auto">
+            </li>
+            <li class="w-1/3 px-2">
+                <img src="{{ asset('img/logos/mono/the_nature_conservancy.jpg') }}" alt="The Nature Conservancy - Logo" class="w-full h-auto">
+            </li>
+            <li class="w-1/3 px-2">
+                <img src="{{ asset('img/logos/mono/sonoran_institute.jpg') }}" alt="Sonoran Institute - Logo" class="w-full h-auto">
+            </li>
+            <li class="w-1/3 px-2">
+                <img src="{{ asset('img/logos/mono/redford_center.png') }}" alt="Redford Center - Logo" class="w-full h-auto">
+            </li>
+            <li class="w-1/3 px-2">
+                <img src="{{ asset('img/logos/mono/pronatura.png') }}" alt="Pronatura - Logo" class="w-full h-auto">
+            </li>
+        </ul>
+    </div>
+</section>
+
 <footer class="website-footer">
     <div class="container">
         <div class="flex flex-col md:flex-row items-start space-y-7 md:space-y-0 md:space-x-7">

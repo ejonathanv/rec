@@ -27,6 +27,18 @@ body{
     }
 }
 
+.bgprimary{
+    @apply bg-primary;
+}
+
+.bgsecondary{
+    @apply bg-secondary;
+}
+
+.bglight{
+    @apply bg-light;
+}
+
 /* LINKS & BUTTONS */
 .btn{
     @apply inline-block px-4 py-3 text-center;
@@ -127,6 +139,23 @@ p.small{
 }
 
 /* POSTS */
+.post-cover{
+    @apply w-full h-52 bg-cover bg-center bg-no-repeat mb-4;
+}
 .post-thumb{
     @apply w-20 h-20 rounded-sm overflow-hidden bg-gray-300;
+}
+.post-card h2{
+    transition: all 0.2s ease-in-out;
+}
+.post-card:hover h2{
+    @apply text-secondary-500;
+}
+
+/* SPONSORS LOGOS */
+/* We need to set multiply filter to each image */
+.sponsors_logos img{
+    filter: invert(1);
+    /* Blend mode multiply here */
+    mix-blend-mode: screen;
 }
