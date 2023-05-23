@@ -6,18 +6,17 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class SloganBar extends Component
+class TwoColumns extends Component
 {
 
-    public $slogan;
+    public $theme;
     public $styles;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($slogan = null, $theme = 'white')
+    public function __construct($theme)
     {
-        $this->slogan = $slogan;
         $this->styles = $this->setStyles($theme);
     }
 
@@ -26,17 +25,14 @@ class SloganBar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.website.slogan-bar');
+        return view('components.website.two-columns');
     }
 
-    /**
-     * Set the styles for the slogan bar.
-     */
     private function setStyles($theme)
     {
         switch ($theme) {
             case 'white':
-                return 'bg-white textprimary';
+                return 'bgwhite';
                 break;
             case 'primary':
                 return 'bgprimary textwhite';
@@ -48,7 +44,7 @@ class SloganBar extends Component
                 return 'bglight';
                 break;
             default:
-                return 'bg-white textblack';
+                return 'bgwhite';
                 break;
         }
     }

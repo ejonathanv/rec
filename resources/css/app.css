@@ -27,16 +27,32 @@ body{
     }
 }
 
+.bgwhite{
+    @apply bg-white;
+}
 .bgprimary{
     @apply bg-primary;
+}
+.textprimary{
+    @apply text-primary;
 }
 
 .bgsecondary{
     @apply bg-secondary;
 }
+.textsecondary{
+    @apply text-secondary;
+}
 
 .bglight{
     @apply bg-light;
+}
+.textlight{
+    @apply text-light;
+}
+
+.textwhite{
+    @apply text-white;
 }
 
 /* LINKS & BUTTONS */
@@ -48,6 +64,10 @@ body{
 
 .btn-primary{
     @apply bg-primary text-white;
+}
+
+.btn-secondary{
+    @apply bg-secondary-500 text-white;
 }
 
 /* TITLES */
@@ -67,6 +87,26 @@ h4{
     @apply text-lg font-bold;
 }
 
+.title-bordered{
+    @apply relative inline-block pb-7 mb-7 leading-tight;
+}
+.title-bordered:before{
+    content: '';
+    @apply absolute w-1/2 h-1 bg-secondary bottom-0 left-0;
+}
+.title-bordered.centered{
+    @apply text-center;
+}
+.title-bordered.centered:before{
+    @apply left-1/2 transform -translate-x-1/2;
+}
+
+@media screen and (max-width: 1024px){
+    .title-bordered{
+        @apply text-2xl;
+    }
+}
+
 /* PARAGRAPHS */
 p{
     @apply text-base mb-4;
@@ -77,7 +117,7 @@ p.small{
 
 /* WEBSITE HEADER */
 .website-header{
-    @apply fixed top-0 left-0 w-full z-50;
+    @apply fixed top-0 left-0 w-full z-50 shadow-md;
 }
 .website-header .logo{
     @apply inline-block;
@@ -97,10 +137,10 @@ p.small{
     @apply absolute w-full bg-secondary -bottom-3 left-0 opacity-0;
     transition: all 0.3s ease-in-out;
 }
-.website-nav a:hover{
+.website-nav a:hover, .website-nav a.active{
     @apply text-secondary;
 }
-.website-nav a:hover:before{
+.website-nav a:hover:before, .website-nav a.active:before{
     @apply opacity-100;
 }
 .website-mobile-nav .nav{

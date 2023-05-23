@@ -6,18 +6,20 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class SloganBar extends Component
+class TwoColumnsImgOnRight extends Component
 {
 
-    public $slogan;
+    public $img;
+    public $alt;
     public $styles;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($slogan = null, $theme = 'white')
+    public function __construct($img = null, $alt = null, $theme = null)
     {
-        $this->slogan = $slogan;
+        $this->img = $img;
+        $this->alt = $alt;
         $this->styles = $this->setStyles($theme);
     }
 
@@ -26,29 +28,26 @@ class SloganBar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.website.slogan-bar');
+        return view('components.website.two-columns-img-on-right');
     }
 
-    /**
-     * Set the styles for the slogan bar.
-     */
     private function setStyles($theme)
     {
         switch ($theme) {
             case 'white':
-                return 'bg-white textprimary';
+                return 'bgwhite';
                 break;
             case 'primary':
-                return 'bgprimary textwhite';
+                return 'bgprimary text-white';
                 break;
             case 'secondary':
-                return 'bgsecondary textwhite';
+                return 'bgsecondary text-white';
                 break;
             case 'light':
                 return 'bglight';
                 break;
             default:
-                return 'bg-white textblack';
+                return 'bgwhite';
                 break;
         }
     }
