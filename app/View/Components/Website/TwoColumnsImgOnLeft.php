@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class TwoColumnsImgOnRight extends Component
+class TwoColumnsImgOnLeft extends Component
 {
 
     public $bgimg;
@@ -30,7 +30,7 @@ class TwoColumnsImgOnRight extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.website.two-columns-img-on-right');
+        return view('components.website.two-columns-img-on-left');
     }
 
     private function setStyles($theme)
@@ -47,9 +47,6 @@ class TwoColumnsImgOnRight extends Component
                 break;
             case 'light':
                 return 'bglight';
-                break;
-            case 'cyan':
-                return 'bgcyan text-white';
                 break;
             default:
                 return 'bgwhite';

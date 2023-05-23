@@ -30,6 +30,6 @@
         </span>
     </li>
 </ol>
-<a href="#" class="btn btn-primary w-full md:w-auto">
+<a href="{{ route('programs') }}" class="btn btn-primary w-full md:w-auto">
     Conoce más de nuestros programas
 </a>
