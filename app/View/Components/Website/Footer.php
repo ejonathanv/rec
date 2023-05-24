@@ -3,17 +3,21 @@
 namespace App\View\Components\Website;
 
 use Closure;
-use Illuminate\Contracts\View\View;
+use App\Models\Post;
 use Illuminate\View\Component;
+use Illuminate\Contracts\View\View;
 
 class Footer extends Component
 {
+
+    public $posts;
+
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
-        //
+        $this->posts = $this->getRecentPosts();
     }
 
     /**
@@ -22,5 +26,16 @@ class Footer extends Component
     public function render(): View|Closure|string
     {
         return view('components.website.footer');
+    }
+
+    /**
+     * Get recent posts.
+     */
+    public function getRecentPosts()
+    {
+        return Post::where('status', 'published')
+            ->orderBy('created_at', 'desc')
+            ->take(3)
+            ->get();
     }
 }

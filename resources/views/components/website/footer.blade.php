@@ -1,6 +1,6 @@
-<section class="py-10 md:py-16 lg:py-20 bg-secondary-900">
+<section class="py-10 md:py-16 lg:pt-20 lg:pb-16 bg-secondary-300 !text-white">
     <div class="container">
-        <h1 class="text-white text-center mb-6 md:mb-16">
+        <h1 class="text-white text-center mb-6 md:mb-10">
             Conoce a nuestros aliados
         </h1>
 
@@ -27,7 +27,7 @@
     </div>
 </section>
 
-<footer class="website-footer">
+<footer class="website-footer !text-white">
     <div class="container">
         <div class="flex flex-col md:flex-row items-start space-y-7 md:space-y-0 md:space-x-7">
             <div class="w-full md:w-1/4">
@@ -44,12 +44,14 @@
                     Contáctenos:
                 </p>
                 <p class="small">
-                    <i class="fa fa-phone"></i>
-                    +52 (686)568 1855
+                    <a href="tel:+526865681855">
+                        <i class="fa fa-phone"></i>
+                        +52 (686)568 1855
+                    </a>
                 </p>
                 <p class="small">
                     <i class="fa fa-envelope"></i>
-                    <a href="#">
+                    <a href="{{ route('contact') }}">
                         Contáctenos
                     </a>
                 </p>
@@ -61,19 +63,25 @@
             <div class="w-full md:w-1/4">
                 <h3 class="mb-4">Publicaciones Recientes</h3>
                 <div class="flex flex-col space-y-2">
-                    <a href="#" class="flex items-stretch space-x-4">
+                    @foreach($posts as $post)
+                    <a href="{{ route('post', $post->slug) }}" class="flex items-stretch space-x-4">
                         <div>
-                            <div class="post-thumb">
+                            <div class="post-thumb" style="background-image: url({{ $post->cover }})">
                             </div>
                         </div>
                         <div>
-                            <p class="small !mb-2">Taller de medición del agua</p>
-                            <p class="small !m-0 opacity-75 flex items-center space-x-2">
+                            <p class="small !mb-2">
+                                {{ $post->title }}
+                            </p>
+                            <p class="text-xs !m-0 opacity-75 flex items-center space-x-2">
                                 <i class="fa fa-calendar-alt"></i>
-                                <span>Mayo 5, 2023</span>
+                                <span>
+                                    {{ $post->created_at->format('d M, Y') }}
+                                </span>
                             </p>
                         </div>
                     </a>
+                    @endforeach
                 </div>
             </div>
             <div class="w-full md:w-1/4">

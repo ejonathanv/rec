@@ -1,5 +1,5 @@
 <a href="{{ route('post', $post->slug) }}" class="block w-full md:w-1/3 bg-white bg-opacity-75 post-card">
-    <div class="post-cover" style="background-image: url('https://picsum.photos/1024/750')">
+    <div class="post-cover" style="background-image: url({{ $post->cover }})">
     </div>
     <div class="p-4">
         <p class="small">

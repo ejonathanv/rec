@@ -31,13 +31,13 @@
             </p>
             <div class="flex flex-col md:flex-row space-y-7 md:space-y-0 md:space-y-0 md:space-x-10">
                 <div>
-                    <h3>Nuestra misión</h3>
+                    <h3 class="mb-4">Nuestra misión</h3>
                     <p class="!mb-0">
                         Contribuir a la restauración de los ecosistemas en el Delta del Río Colorado y compartir experiencias y conocimientos entre los usuarios para impulsar la resiliencia hídrica. 
                     </p>
                 </div>
                 <div>
-                    <h3>Nuestra visión</h3>
+                    <h3 class="mb-4">Nuestra visión</h3>
                     <p class="!mb-0">
                         Ser una organización clave en la toma de decisiones sobre la conservación del agua y medio ambiente en la cuenca del Río Colorado. 
                     </p>

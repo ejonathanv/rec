@@ -18,7 +18,7 @@
         <script src="https://kit.fontawesome.com/133291f590.js" crossorigin="anonymous"></script>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="text-gray-900 antialiased">
+    <body class="antialiased">
         <x-website.header></x-website.header>
         <main class="main">
             {{ $slot }}

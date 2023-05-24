@@ -2,7 +2,7 @@
     Inicio
 </a>
 <a href="{{ route('about') }}" class="@if(request()->routeIs('about')) active @endif">
-    Quíenes somos
+    Quiénes somos
 </a>
 <a href="{{ route('programs') }}" class="@if(request()->routeIs('programs')) active @endif">
     Programas

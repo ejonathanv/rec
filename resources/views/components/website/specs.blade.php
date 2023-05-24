@@ -1,7 +1,7 @@
 <section class="py-10 md:py-16 lg:py-24 bg-white">
-    <div class="container flex flex-col md:flex-row items-stretch space-y-10 md:space-y-0 md:space-x-10 text-center md:text-left">
+    <div class="container flex flex-col md:flex-row items-stretch space-y-10 md:space-y-0 md:space-x-10 text-center">
         <div class="w-full md:w-1/3">
-            <img src="{{ asset('img/alianzas_estrategicas_icono.png') }}" alt="Restauremos el Colorado - Alianzas estratégicas" class="w-20 h-auto mb-7 mx-auto md:ml-0" />
+            <img src="{{ asset('img/alianzas_estrategicas_icono.png') }}" alt="Restauremos el Colorado - Alianzas estratégicas" class="w-20 h-auto mb-7 mx-auto" />
             <h3 class="mb-6">
                 Alianzas estratégicas
             </h3>
@@ -11,7 +11,7 @@
         </div>
 
         <div class="w-full md:w-1/3">
-            <img src="{{ asset('img/compromiso_ambiental_icono.png') }}" alt="Restauremos el Colorado - Compromiso ambiental" class="w-20 h-auto mb-7 mx-auto md:ml-0" />
+            <img src="{{ asset('img/compromiso_ambiental_icono.png') }}" alt="Restauremos el Colorado - Compromiso ambiental" class="w-20 h-auto mb-7 mx-auto" />
             <h3 class="mb-6">
                 Compromiso ambiental
             </h3>
@@ -21,7 +21,7 @@
         </div>
 
         <div class="w-full md:w-1/3">
-            <img src="{{ asset('img/credibilidad_icono.png') }}" alt="Restauremos el Colorado - Credibilidad" class="w-20 h-auto mb-7 mx-auto md:ml-0" />
+            <img src="{{ asset('img/credibilidad_icono.png') }}" alt="Restauremos el Colorado - Credibilidad" class="w-20 h-auto mb-7 mx-auto" />
             <h3 class="mb-6">
                 Credibilidad
             </h3>
