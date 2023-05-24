@@ -202,3 +202,12 @@ p.small{
     /* Blend mode multiply here */
     mix-blend-mode: screen;
 }
+
+/* FORMS */
+.form-group{
+    @apply mb-4 w-full;
+}
+
+.form-control{
+    @apply block w-full border border-gray-300 rounded-sm px-4 py-3;
+}

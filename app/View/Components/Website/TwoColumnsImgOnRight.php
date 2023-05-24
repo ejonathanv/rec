@@ -9,6 +9,7 @@ use Illuminate\View\Component;
 class TwoColumnsImgOnRight extends Component
 {
 
+    public $id;
     public $bgimg;
     public $img;
     public $alt;
@@ -17,8 +18,9 @@ class TwoColumnsImgOnRight extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct($img = null, $alt = null, $theme = null, $bgimg = null)
+    public function __construct($id = null, $img = null, $alt = null, $theme = null, $bgimg = null)
     {
+        $this->id = $id;
         $this->bgimg = $bgimg;
         $this->img = $img;
         $this->alt = $alt;

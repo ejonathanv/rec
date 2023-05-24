@@ -10,6 +10,7 @@ Route::get('/programas', [WebsiteController::class, 'programs'])->name('programs
 Route::get('/conoce-mas', [WebsiteController::class, 'knowMore'])->name('knowMore');
 Route::get('/conoce-mas/{post:slug}', [WebsiteController::class, 'post'])->name('post');
 Route::get('/contacto', [WebsiteController::class, 'contact'])->name('contact');
+Route::post('/contacto', [WebsiteController::class, 'contactPost'])->name('contactPost');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

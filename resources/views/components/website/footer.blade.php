@@ -83,25 +83,25 @@
                 </p>
                 <ul class="text-sm list-links">
                     <li>
-                        <a href="#">
+                        <a href="{{ route('programs', '#gestion-del-agua') }}">
                             <i class="fa fa-arrow-right"></i>
                             <span>Gestión del agua</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                    <a href="{{ route('programs', '#restauracion-ambiental') }}">
                             <i class="fa fa-arrow-right"></i>
                             <span>Restauración ambiental</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('programs', '#hidrologia') }}">
                             <i class="fa fa-arrow-right"></i>
                             <span>Hidrología</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="{{ route('programs', '#agroecologia') }}">
                             <i class="fa fa-arrow-right"></i>
                             <span>Agroecología</span>
                         </a>

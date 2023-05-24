@@ -7,6 +7,7 @@
         slogan="Son muchos los retos en el Delta del Río Colorado, por eso trabajamos como aliados en la restauración y gestión del agua." />    
 
     <x-website.two-columns-img-on-left 
+        id="gestion-del-agua"
         theme="white" 
         img="{{ asset('img/restauremos_el_colorado_gestion_del_agua.jpg') }}">
             
@@ -32,6 +33,7 @@
     </x-website.two-columns-img-on-left>
 
     <x-website.two-columns-img-on-right 
+        id="restauracion-ambiental"
         theme="cyan" 
         img="{{ asset('img/restauremos_el_colorado_restauracion_ambiental.jpg') }}">
             
@@ -54,6 +56,7 @@
     </x-website.two-columns-img-on-right>
 
     <x-website.two-columns-img-on-left 
+        id="hidrologia"
         theme="white" 
         bgimg="{{ asset('img/restauremos_el_colorado_publicaciones.jpg') }}"
         img="{{ asset('img/restauremos_el_colorado_hidrologia.jpg') }}">
@@ -77,6 +80,7 @@
     </x-website.two-columns-img-on-left>
 
     <x-website.two-columns-img-on-right 
+        id="agroecologia"
         theme="primary" 
         img="{{ asset('img/restauremos_el_colorado_restauracion_agroecologia.jpg') }}">
             <h2 class="title-bordered">
