@@ -61,28 +61,7 @@
                 </p>
             </div>
             <div class="w-full md:w-1/4">
-                <h3 class="mb-4">Publicaciones Recientes</h3>
-                <div class="flex flex-col space-y-2">
-                    @foreach($posts as $post)
-                    <a href="{{ route('post', $post->slug) }}" class="flex items-stretch space-x-4">
-                        <div>
-                            <div class="post-thumb" style="background-image: url({{ $post->cover }})">
-                            </div>
-                        </div>
-                        <div>
-                            <p class="small !mb-2">
-                                {{ $post->title }}
-                            </p>
-                            <p class="text-xs !m-0 opacity-75 flex items-center space-x-2">
-                                <i class="fa fa-calendar-alt"></i>
-                                <span>
-                                    {{ $post->created_at->format('d M, Y') }}
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    @endforeach
-                </div>
+                <x-website.posts-small-list title="Publicaciones Recientes" :posts="$posts" />
             </div>
             <div class="w-full md:w-1/4">
                 <h3 class="mb-4">Nuestros Programas</h3>

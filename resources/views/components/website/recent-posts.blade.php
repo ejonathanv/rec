@@ -7,10 +7,16 @@
             Compartimos nuestros conocimientos, experiencia técnica y científica para mejorar la gestión del agua en la región.
         </p>
 
+        @if(count($posts))
         <div class="flex flex-col md:flex-row items-stretch space-y-7 md:space-y-0 md:space-x-9 mt-20">
             @foreach($posts as $post)
                 <x-website.post-card :post="$post" />
             @endforeach
         </div>
+        @else
+            <h3 class="text-center mb-4 mt-10">
+                No hemos publicado nada aún. Pero pronto estaremos compartiendo información relevante.
+            </h3>
+        @endif
     </div>
 </section>

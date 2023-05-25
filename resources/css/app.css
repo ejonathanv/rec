@@ -187,6 +187,12 @@ p.small{
 .post-cover{
     @apply w-full h-52 bg-cover bg-center bg-no-repeat mb-4;
 }
+.post-cover.lg{
+    @apply h-72;
+}
+.post-cover.xl{
+    @apply h-96;
+}
 .post-thumb{
     @apply w-20 h-20 rounded-sm overflow-hidden bg-gray-300 bg-cover bg-center bg-no-repeat;
 }

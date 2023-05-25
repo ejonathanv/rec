@@ -25,14 +25,25 @@ class WebsiteController extends Controller
         return view('website.programs');
     }
 
-    public function knowMore()
+    public function knowMore(Request $request)
     {
-        return view('website.knowMore');
+        if($request->has('consulta')) {
+            $posts = Post::where('title', 'LIKE', "%{$request->consulta}%")
+                ->latest()
+                ->paginate(6);
+            return view('website.knowMore', compact('posts', 'request'));
+        }
+
+        $posts = Post::latest()->paginate(6);
+        return view('website.knowMore', compact('posts'));
     }
 
     public function post(Post $post)
     {
-        return view('website.post', compact('post'));
+
+        $otherPosts = Post::where('id', '!=', $post->id)->latest()->take(5)->get();
+
+        return view('website.post', compact('post', 'otherPosts'));
     }
 
     public function contact()
