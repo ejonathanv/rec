@@ -11,7 +11,7 @@
             @if(count($posts))
             <div class="mb-16">
                 <form action="{{ route('knowMore') }}" method="GET"
-                    class="w-6/12 mx-auto flex items-stretch space-x-2">
+                    class="w-full md:w-6/12 mx-auto flex items-stretch space-x-2">
                     <div class="form-group !m-0">
                         <input type="text" name="consulta" class="form-control" placeholder="Buscar...">
                     </div>
@@ -36,14 +36,14 @@
                 @endisset
 
                 @foreach($posts as $post)
-                    <div class="flex items-start space-x-7 mb-16">
-                        <div class="w-4/12">
+                    <div class="flex flex-col md:flex-row space-y-7 md:space-y-0 items-start md:space-x-7 mb-16">
+                        <div class="w-full md:w-4/12">
                             <a href="{{ route('post', $post->slug) }}">
                                 <div class="post-cover lg shadow rounded" style="background-image: url({{ $post->cover }})">
                                 </div>
                             </a>
                         </div>
-                        <div class="w-8/12">
+                        <div class="w-full md:w-8/12">
                             <p class="text-gray-400 flex items-center space-x-2">
                                 <i class="fa fa-calendar-alt fa-sm"></i>
                                 <span>
