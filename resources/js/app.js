@@ -25,3 +25,20 @@ function hideMobileNav() {
 
 toggleMobileNav();
 hideMobileNav();
+
+
+ClassicEditor
+.create( document.querySelector( '#editor' ), {
+        toolbar: [ 'heading', '|', 'bold', 'italic'],
+        placeholder: 'Escribe tu contenido aquí...'
+} )
+.then( editor => {
+
+    editor.model.document.on( 'change:data', () => {
+        let input = document.querySelector( '#postContent' );
+        input.value = editor.getData();
+    });
+} )
+.catch( error => {
+        console.error( error );
+} );

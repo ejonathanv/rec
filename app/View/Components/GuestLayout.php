@@ -9,6 +9,7 @@ class GuestLayout extends Component
 {
 
     public $title;
+    public $scripts;
 
     public function __construct($title = null)
     {

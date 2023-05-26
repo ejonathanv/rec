@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use Illuminate\Support\Str;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
-use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -13,7 +14,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::latest()->paginate(10);
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -21,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
@@ -29,7 +31,30 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $post = new Post();
+        $post->user_id = auth()->user()->id;
+        $post->title = $request->title;
+        $post->resume = $request->resume;
+        $post->content = $request->content;
+        $post->slug = Str::slug($request->title);
+        $post->status = $request->draft ? 'draft' : 'published';
+
+        $post->save();
+
+        if($request->has('cover')){
+            // We need to upload the $request->cover img and store the image in the public/uploads folder
+            $cover = $request->file('cover');
+            $coverName = time() . '_' . $cover->getClientOriginalName();
+            $cover->move(public_path('uploads'), $coverName);
+    
+            // We need to update the $post->cover with the new image name
+            $post->cover = $coverName;
+    
+            // We need to save the $post->cover
+            $post->save();
+        }
+
+        return redirect()->route('posts.show', $post)->with('success', 'Se ha creado la publicación correctamente');
     }
 
     /**
@@ -37,7 +62,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
@@ -53,7 +78,29 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $post->title = $request->title;
+        $post->resume = $request->resume;
+        $post->content = $request->content;
+        $post->slug = Str::slug($request->title);
+        $post->status = $request->draft ? 'draft' : 'published';
+        $post->save();
+
+        if($request->has('cover')){
+            // We need to upload the $request->cover img and store the image in the public/uploads folder
+            $cover = $request->file('cover');
+            $coverName = time() . '_' . $cover->getClientOriginalName();
+            $cover->move(public_path('uploads'), $coverName);
+    
+            // We need to update the $post->cover with the new image name
+            $post->cover = $coverName;
+    
+            // We need to save the $post->cover
+            $post->save();
+        }
+
+
+        return redirect()->route('posts.show', $post)->with('success', 'La publicación se actualizó con éxito.');
+
     }
 
     /**
@@ -61,6 +108,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('posts.index')->with('success', 'La publicación se eliminó con éxito.');
     }
 }

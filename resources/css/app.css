@@ -71,8 +71,16 @@ body{
     @apply bg-primary text-white;
 }
 
+.btn-danger{
+    @apply bg-red-600 text-white;
+}
+
 .btn-secondary{
     @apply bg-secondary-500 text-white;
+}
+
+.link{
+    @apply text-secondary-500 hover:text-secondary-900 hover:underline;
 }
 
 /* TITLES */
@@ -218,4 +226,15 @@ p.small{
 
 .form-control{
     @apply block w-full border border-gray-300 rounded-sm px-4 py-3;
+}
+
+/* TABLES */
+.table{
+    @apply w-full border  text-left bg-white shadow;
+}
+.table tr th{
+    @apply px-4 py-3 text-sm font-bold uppercase border-b;
+}
+.table tr td{
+    @apply px-4 py-2 text-sm;
 }

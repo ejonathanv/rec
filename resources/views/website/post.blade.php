@@ -10,7 +10,7 @@
         <div class="container">
             <div class="flex flex-col md:flex-row space-y-7 md:space-y-0 md:space-x-10">
                 <div class="w-full md:w-8/12">
-                    <div class="post-cover xl shadow rounded" style="background-image: url({{ $post->cover }})">
+                    <div class="post-cover xl shadow rounded" style="background-image: url({{ asset('uploads/' . $post->cover) }})">
                     </div>
                     <div class="mt-10 md:mt-16">
                         <p class="small mb-6">
@@ -26,13 +26,15 @@
                             {{ $post->resume }}
                         </h3>
                         <p>
-                            {{ $post->content }}
+                            {!! $post->content !!}
                         </p>
                     </div>
                 </div>
+                @if(count($otherPosts))
                 <div class="w-full md:w-4/12">
                     <x-website.posts-small-list title="Otras Publicaciones" :posts="$otherPosts" />
                 </div>
+                @endif
             </div>
         </div>
     </section>

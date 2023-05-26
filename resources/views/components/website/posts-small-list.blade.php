@@ -6,7 +6,7 @@
     @foreach($posts as $post)
     <a href="{{ route('post', $post->slug) }}" class="flex items-stretch space-x-4">
         <div>
-            <div class="post-thumb" style="background-image: url({{ $post->cover }})">
+            <div class="post-thumb" style="background-image: url({{ asset('uploads/' . $post->cover) }})">
             </div>
         </div>
         <div>

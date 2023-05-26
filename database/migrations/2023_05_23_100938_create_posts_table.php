@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('resume');
             $table->text('content');
-            $table->string('cover');
+            $table->string('cover')->nullable();
             $table->string('slug');
             $table->string('status')->default('draft');
             $table->timestamps();

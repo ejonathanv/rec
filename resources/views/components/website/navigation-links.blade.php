@@ -13,3 +13,9 @@
 <a href="{{ route('contact') }}" class="@if(request()->routeIs('contact')) active @endif">
     Contacto
 </a>
+
+@auth
+<a href="{{ route('admin') }}" class="@if(request()->routeIs('admin*')) active @endif">
+    Administración
+</a>
+@endauth

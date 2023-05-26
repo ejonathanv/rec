@@ -16,6 +16,9 @@
 
         <!-- Scripts -->
         <script src="https://kit.fontawesome.com/133291f590.js" crossorigin="anonymous"></script>
+        @auth
+        <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+        @endauth
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="antialiased">

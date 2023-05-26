@@ -39,7 +39,7 @@
                     <div class="flex flex-col md:flex-row space-y-7 md:space-y-0 items-start md:space-x-7 mb-16">
                         <div class="w-full md:w-4/12">
                             <a href="{{ route('post', $post->slug) }}">
-                                <div class="post-cover lg shadow rounded" style="background-image: url({{ $post->cover }})">
+                                <div class="post-cover lg shadow rounded" style="background-image: url({{ asset('uploads/' . $post->cover) }})">
                                 </div>
                             </a>
                         </div>
@@ -55,11 +55,11 @@
                                     {{ $post->title }}
                                 </a>
                             </h2>
-                            <h4>
+                            <h4 class="mb-4">
                                 {{ $post->resume }}
                             </h4>
                             <p>
-                                {{ $post->content }}
+                                {!! \Str::limit($post->content, 120) !!}
                             </p>
                             <a href="{{ route('post', $post->slug) }}" class="inline-block">
                                 <span class="text-secondary-500 hover:text-secondary-900 hover:underline">

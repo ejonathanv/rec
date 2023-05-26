@@ -29,19 +29,24 @@ class WebsiteController extends Controller
     {
         if($request->has('consulta')) {
             $posts = Post::where('title', 'LIKE', "%{$request->consulta}%")
+                ->where('status', 'published')
                 ->latest()
                 ->paginate(6);
             return view('website.knowMore', compact('posts', 'request'));
         }
 
-        $posts = Post::latest()->paginate(6);
+        $posts = Post::where('status', 'published')->latest()->paginate(6);
         return view('website.knowMore', compact('posts'));
     }
 
     public function post(Post $post)
     {
 
-        $otherPosts = Post::where('id', '!=', $post->id)->latest()->take(5)->get();
+        $otherPosts = Post::where('id', '!=', $post->id)
+            ->where('status', 'published')
+            ->latest()
+            ->take(5)
+            ->get();
 
         return view('website.post', compact('post', 'otherPosts'));
     }

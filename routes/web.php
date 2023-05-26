@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebsiteController;
 
@@ -12,14 +14,9 @@ Route::get('/conoce-mas/{post:slug}', [WebsiteController::class, 'post'])->name(
 Route::get('/contacto', [WebsiteController::class, 'contact'])->name('contact');
 Route::post('/contacto', [WebsiteController::class, 'contactPost'])->name('contactPost');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
+    Route::redirect('/', '/admin/posts')->name('admin');
+    Route::resource('posts', PostController::class);
 });
 
 require __DIR__.'/auth.php';

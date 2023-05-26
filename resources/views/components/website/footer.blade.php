@@ -96,12 +96,24 @@
                 </ul>
                 <hr class="my-4 border-secondary">
                 <ul class="text-sm list-links">
+                    @guest
                     <li>
                         <a href="{{ route('login') }}">
                             <i class="fa fa-arrow-right"></i>
                             <span>Iniciar sesión</span>
                         </a>
                     </li>
+                    @else
+                    <li>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit">
+                                <i class="fa fa-arrow-right"></i>
+                                <span>Cerrar sesión</span>
+                            </button>
+                        </form>
+                    </li>
+                    @endguest
                 </ul>
             </div>
             <div class="w-full md:w-1/4">
