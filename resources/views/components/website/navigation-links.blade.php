@@ -1,3 +1,15 @@
+@if(request()->segment(1) === 'admin')
+
+<a href="{{ route('home') }}">
+    Ver el sitio web
+</a>
+
+<a href="{{ route('account') }}" class="@if(request()->routeIs('account')) active @endif">
+    Mi cuenta
+</a>
+
+@else
+
 <a href="{{ route('home') }}" class="@if(request()->routeIs('home')) active @endif">
     Inicio
 </a>
@@ -14,8 +26,10 @@
     Contacto
 </a>
 
+@endif
+
 @auth
-<a href="{{ route('admin') }}" class="@if(request()->routeIs('admin*')) active @endif">
-    Administración
-</a>
+    <a href="{{ route('admin') }}" class="@if(request()->routeIs('posts.*')) active @endif">
+        Administración
+    </a>
 @endauth

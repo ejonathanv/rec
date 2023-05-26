@@ -1,5 +1,5 @@
 <x-guest-layout title="{{ $post->title }}">
-    <section class="py-10 md:py-16 bg-light">
+    <section class="py-10 md:py-16 bg-white">
         <div class="container">
             <div class="w-full md:w-6/12 mx-auto">
 

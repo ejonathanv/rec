@@ -35,7 +35,8 @@ class PostForm extends Component
     {
         if ($this->method == 'POST') {
             return route('posts.store');
+        }else{
+            return route('posts.update', $this->post);
         }
-        return route('posts.update', $this->post);
     }
 }

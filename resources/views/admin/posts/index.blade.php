@@ -1,5 +1,5 @@
 <x-guest-layout title="Administración">
-    <section class="py-10 md:py-16 bg-light">
+    <section class="py-10 md:py-16 bg-white">
         <div class="container">
             <div class="w-full md:w-9/12 mx-auto">
 
@@ -24,7 +24,7 @@
 
                 <div>
                     @foreach($posts as $post)
-                        <div class="flex flex-col md:flex-row mb-4 space-y-5 md:space-y-0 space-x-0 md:space-x-10 bg-white shadow p-6 rounded shadow">
+                        <div class="flex flex-col md:flex-row mb-4 space-y-5 md:space-y-0 space-x-0 md:space-x-10 bg-white p-6 border rounded">
                             <div class="w-full md:w-4/12">
                                 <a href="{{ route('posts.show', $post) }}">
                                     <div class="post-cover sm !m-0" style="background-image: url({{ asset('uploads/' . $post->cover) }})"></div>

@@ -57,4 +57,33 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    public function account()
+    {
+        return view('admin.account.index');
+    }
+
+    public function updateAccount(Request $request)
+    {
+        $validate = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'nullable|min:6',
+        ], [
+            'name.required' => 'El nombre es obligatorio',
+            'email.required' => 'El email es obligatorio',
+            'email.email' => 'El email no es válido',
+            'password.min' => 'La contraseña debe tener al menos 6 caracteres',
+        ]);
+
+        $user = auth()->user();
+        $user->name = $validate['name'];
+        $user->email = $validate['email'];
+        if($request->password) {
+            $user->password = bcrypt($validate['password']);
+        }
+        $user->save();
+
+        return back()->with('success', 'Cuenta actualizada con éxito');
+    }
 }
