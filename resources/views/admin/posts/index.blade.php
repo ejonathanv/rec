@@ -54,6 +54,10 @@
                                         {{ $post->status == 'draft' ? 'Borrador' : 'Publicado' }}
                                     </span>
                                 </p>
+
+                                <p class="!m-0">
+                                    Clasificación: {{ $post->category->name }}
+                                </p>
                             </div>
                         </div>
                     @endforeach

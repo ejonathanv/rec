@@ -3,7 +3,7 @@
     </div>
     <div class="p-4">
         <p class="small">
-            {{ $post->created_at->format('d M, Y') }}
+            {{ $post->created_at->format('d M, Y') }} | {{ $post->category->name }}
         </p>
         <h2 class="mb-4">
             {{ $post->title }}

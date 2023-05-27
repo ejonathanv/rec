@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
@@ -39,7 +40,12 @@ class PostController extends Controller
         $post->slug = Str::slug($request->title);
         $post->status = $request->draft ? 'draft' : 'published';
 
-        $post->save();
+        if($request->has('category')){
+            $category = Category::firstOrCreate([
+                'name' => $request->category
+            ]);
+            $post->category_id = $category->id;
+        }
 
         if($request->has('cover')){
             // We need to upload the $request->cover img and store the image in the public/uploads folder
@@ -49,10 +55,11 @@ class PostController extends Controller
     
             // We need to update the $post->cover with the new image name
             $post->cover = $coverName;
-    
-            // We need to save the $post->cover
-            $post->save();
+
         }
+
+        $post->save();
+
 
         return redirect()->route('posts.show', $post)->with('success', 'Se ha creado la publicación correctamente');
     }
@@ -83,7 +90,13 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->slug = Str::slug($request->title);
         $post->status = $request->draft ? 'draft' : 'published';
-        $post->save();
+        
+        if($request->has('category')){
+            $category = Category::firstOrCreate([
+                'name' => $request->category
+            ]);
+            $post->category_id = $category->id;
+        }
 
         if($request->has('cover')){
             // We need to upload the $request->cover img and store the image in the public/uploads folder
@@ -93,10 +106,10 @@ class PostController extends Controller
     
             // We need to update the $post->cover with the new image name
             $post->cover = $coverName;
-    
-            // We need to save the $post->cover
-            $post->save();
         }
+
+        $post->save();
+
 
 
         return redirect()->route('posts.show', $post)->with('success', 'La publicación se actualizó con éxito.');

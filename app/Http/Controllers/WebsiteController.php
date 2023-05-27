@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Mail\NewMessage;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Mail\ThankYouForContactUs;
 use Illuminate\Support\Facades\Mail;
@@ -29,6 +30,15 @@ class WebsiteController extends Controller
     {
         if($request->has('consulta')) {
             $posts = Post::where('title', 'LIKE', "%{$request->consulta}%")
+                ->where('status', 'published')
+                ->latest()
+                ->paginate(6);
+            return view('website.knowMore', compact('posts', 'request'));
+        }
+
+        if($request->has('clasificacion')) {
+            $category = Category::where('name', $request->clasificacion)->firstOrFail();
+            $posts = Post::where('category_id', $category->id)
                 ->where('status', 'published')
                 ->latest()
                 ->paginate(6);

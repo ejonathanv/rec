@@ -64,6 +64,42 @@
     </div>
 
     <div class="form-group">
+        <label for="">
+            Classificación
+        </label>
+        <select name="category" class="form-control" required>
+            <option value="">Seleccione una opción</option>
+            <option value="Comunicados"
+                @isset($post) 
+                    @if($post->category->name == 'Comunicados')
+                        selected
+                    @endif
+                @endisset
+                >
+                Comunicados
+            </option>
+            <option value="Noticias"
+                @isset($post) 
+                    @if($post->category->name == 'Noticias')
+                        selected
+                    @endif
+                @endisset
+                >
+                Noticias
+            </option>
+            <option value="Artículos"
+                @isset($post) 
+                    @if($post->category->name == 'Artículos')
+                        selected
+                    @endif
+                @endisset
+                >
+                Artículos
+            </option>
+        </select>
+    </div>
+
+    <div class="form-group">
         <label class="flex items-center space-x-2">
             <input type="checkbox" name="draft" {{ isset($post) && $post->status == 'draft' ? 'checked' : '' }}>
             <span>

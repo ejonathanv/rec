@@ -9,13 +9,11 @@
                     ¿Quieres saber más sobre nuestro trabajo o compartirnos una idea? 
                 </h1>
 
-                <h3 class="text-2xl text-center mt-6">
-                    <i class="fa fa-phone-alt fa-sm text-secondary mr-2"></i>
-                    <span>Llámanos: </span>
-                    <a href="tel:+52 (686)568 1855" class="text-secondary-500 underline">
-                        +52 (686)568 1855
+                <div class="flex items-center justify-center text-5xl text-secondary-500">
+                    <a href="#">
+                        <i class="fab fa-whatsapp"></i>
                     </a>
-                </h3>
+                </div>
             </div>
         </div>
     </section>

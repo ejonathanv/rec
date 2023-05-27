@@ -19,6 +19,23 @@
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
+
+                <nav class="flex items-center space-x-6 justify-center mt-5">
+                    <a href="{{ route('knowMore') }}"
+                        class="@empty($request) link @endempty">
+                        Todos los temas
+                    </a>
+                    <a href="{{ route('knowMore', ['clasificacion' => 'comunicados']) }}" class="@isset($request) @if($request->clasificacion == 'comunicados') link @endif @endisset">
+                        Comunicados
+                    </a>
+                    <a href="{{ route('knowMore', ['clasificacion' => 'noticias']) }}" class="@isset($request) @if($request->clasificacion == 'noticias') link @endif @endisset">
+                        Noticias
+                    </a>
+                    <a href="{{ route('knowMore', ['clasificacion' => 'articulos']) }}"
+                        class="@isset($request) @if($request->clasificacion == 'articulos') link @endif @endisset">
+                        Artículos
+                    </a>
+                </nav>
             </div>
             <div>
 
@@ -47,7 +64,7 @@
                             <p class="text-gray-400 flex items-center space-x-2">
                                 <i class="fa fa-calendar-alt fa-sm"></i>
                                 <span>
-                                {{ $post->created_at->format('d M, Y') }}
+                                {{ $post->created_at->format('d M, Y') }} | {{ $post->category->name }}
                                 </span>
                             </p>
                             <h2 class="mb-6">
