@@ -70,7 +70,7 @@
         <select name="category" class="form-control" required>
             <option value="">Seleccione una opción</option>
             <option value="Comunicados"
-                @isset($post) 
+                @isset($post && $post->category) 
                     @if($post->category->name == 'Comunicados')
                         selected
                     @endif
@@ -79,7 +79,7 @@
                 Comunicados
             </option>
             <option value="Noticias"
-                @isset($post) 
+                @isset($post && $post->category)
                     @if($post->category->name == 'Noticias')
                         selected
                     @endif
@@ -88,7 +88,7 @@
                 Noticias
             </option>
             <option value="Artículos"
-                @isset($post) 
+                @isset($post && $post->category)
                     @if($post->category->name == 'Artículos')
                         selected
                     @endif
