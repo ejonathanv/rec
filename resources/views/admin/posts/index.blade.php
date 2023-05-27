@@ -56,7 +56,7 @@
                                 </p>
 
                                 <p class="!m-0">
-                                    Clasificación: {{ $post->category->name }}
+                                    Clasificación: {{ $post->category ? $post->category->name : 'Sin clasificación' }}
                                 </p>
                             </div>
                         </div>
