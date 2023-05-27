@@ -1,13 +1,8 @@
 <x-guest-layout title="Bienvenidos">
     <!-- This is the page cover -->
     <x-website.page-cover  
-        title="Es posible devolver la vida al Delta del Río Colorado " 
-        bgimg="{{ asset('img/restauremos_el_colorado_portada.jpg') }}" />
-
-    <!-- This is the slogan bar -->
-    <x-website.slogan-bar 
-        theme="white" 
-        slogan="El Río Colorado es nuestra principal fuente de agua y vida." />
+        title="El Río Colorado es nuestra principal fuente de agua y vida." 
+        bgimg="{{ asset('img/restauremos_el_colorado_portada_2.jpg') }}" />
 
     <!-- This is a title before the specs -->
     <x-website.slogan-bar 

@@ -45,7 +45,7 @@
                                 <label for="">
                                     Nombre completo
                                 </label>
-                                <input type="text" class="form-control" name="name" required placeholder="Nombre(s) Apellido(s)" value="{{ old('name') }}" autofocus>
+                                <input type="text" class="form-control" name="name" required placeholder="Nombre(s) Apellido(s)" value="{{ old('name') }}">
                                 @error('name')
                                     <span class="text-red-500 text-xs font-bold">
                                         {{ $message }}
