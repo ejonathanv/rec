@@ -9,7 +9,7 @@
     <section class="py-10 md:py-16 lg:py-24 bg-white">
         <div class="container">
             @if(count($posts))
-            <div class="mb-16">
+            <div class="mb-7 md:mb-16">
                 <form action="{{ route('knowMore') }}" method="GET"
                     class="w-full md:w-6/12 mx-auto flex items-stretch space-x-2">
                     <div class="form-group !m-0">
@@ -20,7 +20,7 @@
                     </button>
                 </form>
 
-                <nav class="flex items-center space-x-6 justify-center mt-5">
+                <nav class="flex flex-col md:flex-row space-y-3 md:space-y-0 items-center md:space-x-6 justify-center mt-5">
                     <a href="{{ route('knowMore') }}"
                         class="@empty($request) link @endempty">
                         Todos los temas
