@@ -1,4 +1,4 @@
-<x-guest-layout title="Quienes Somos">
+<x-guest-layout title="Quiénes Somos">
     <x-website.page-cover 
         bgimg="{{ asset('img/restauremos_el_colorado_quienes_somos.jpg') }}" />
 
