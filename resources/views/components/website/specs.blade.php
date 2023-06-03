@@ -6,7 +6,7 @@
                 Alianzas estratégicas
             </h3>
             <p>
-                Formamos parte de la Alianza Revive el Río Colorado. Compartimos los conocimientos y experiencia técnica adquiridos en materia de gestión del agua y trabajamos de la mano con gobiernos de México y Estados Unidos, investigadores y usuarios agrícolas.
+                Formamos parte de la Alianza Revive el Río Colorado. Compartimos conocimientos técnicos y experiencias en gestión del agua y trabajamos de la mano con gobiernos de México y Estados Unidos, investigadores y usuarios agrícolas.
             </p>
         </div>
 
@@ -16,7 +16,7 @@
                 Compromiso ambiental
             </h3>
             <p>
-                Comprometidos con la conservación de nuestro hábitat natural, transformamos ecosistemas en beneficio de cientos de especies de flora y fauna y las comunidades de la región.
+                Comprometidos con la conservación de nuestro hábitat natural, transformamos ecosistemas en beneficio de cientos de especies de flora y fauna <br> y las comunidades de la región.
             </p>
         </div>
 
@@ -26,7 +26,7 @@
                 Credibilidad
             </h3>
             <p>
-                Respaldamos nuestro trabajo, con datos científicos y experiencias de campo, ganando la confianza de los usuarios del agua, autoridades y comunidad.
+                Respaldamos nuestro trabajo con datos científicos e investigación de campo para ganar la confianza de los usuarios del agua, autoridades y comunidad.
             </p>
         </div>
     </div>

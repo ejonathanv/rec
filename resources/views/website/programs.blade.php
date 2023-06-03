@@ -41,7 +41,7 @@
                 Restauración ambiental
             </h2>
             <h4 class="mb-7">
-                Devolverle la vida y el equilibrio a los ecosistemas.
+                Regresar el equilibrio al ecosistema.
             </h4>
 
             <p class="small">

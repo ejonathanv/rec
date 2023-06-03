@@ -1,7 +1,7 @@
 <x-guest-layout title="Bienvenidos">
     <!-- This is the page cover -->
     <x-website.page-cover  
-        title="El Río Colorado es nuestra principal fuente de agua y vida." 
+        title="El Río Colorado es nuestra principal fuente de agua y vida" 
         bgimg="{{ asset('img/restauremos_el_colorado_portada_2.jpg') }}" />
 
     <!-- This is a title before the specs -->

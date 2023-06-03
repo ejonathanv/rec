@@ -15,7 +15,6 @@
             <p class="small">
                 Somos un equipo de expertos dedicados a la restauración del medio ambiente en el Delta del Río Colorado y a la implementación de mejoras para la gestión del agua. Uno de nuestros sitios de restauración llamado “El Chaussé”, es un referente de cómo una región degradada, puede recuperar su equilibrio, convirtiéndose en bello paisaje natural.
             </p>
-
             <p class="small !mb-0">
                 Aportamos capacidades técnicas basadas en el trabajo científico, estableciendo alianzas con organizaciones civiles, comunidades, gobiernos, agricultores y academia, para juntos, ser parte de la solución. A través de los años, hemos obtenido mayor experiencia en la medición del agua, que sirve para implementar estrategias de resiliencia hídrica, ante el cambio climático, la sequía y otras amenazas al ecosistema. 
             </p>
@@ -24,11 +23,8 @@
     <x-website.two-columns theme="light">
         <x-slot name="left">
             <h1 class="title-bordered">
-            Compromiso ambiental con el Delta del Río Colorado y las comunidades
-            </h1>
-            <p class="text-lg mb-10">
                 Trabajamos todos los días para lograr una gestión del agua más eficiente, que sirva a todos los usuarios en la región, protegiendo la preservación de flora y fauna nativa del Delta.
-            </p>
+            </h1>
             <div class="flex flex-col md:flex-row space-y-7 md:space-y-0 md:space-y-0 md:space-x-10">
                 <div>
                     <h3 class="mb-4">Nuestra misión</h3>
@@ -56,8 +52,9 @@
                     <li>Credibilidad y transparencia.</li>
                 </ul>
 
-                <a href="#" class="btn btn-secondary">
-                    Conoce los programas
+                <a href="{{ route('programs') }}"
+                    class="btn btn-secondary">
+                    Nuestros programas
                 </a>
             </div>
         </x-slot>

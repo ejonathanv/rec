@@ -41,12 +41,12 @@
                     <i class="fab fa-facebook fa-2x"></i>
                 </a>
                 <p class="small">
-                    Contáctenos:
+                    Contáctanos:
                 </p>
                 <p class="small">
-                    <a href="tel:+526865681855">
-                        <i class="fa fa-phone"></i>
-                        +52 (686)568 1855
+                    <a href="https://wa.me/526861549393" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        +52 (686)154-9393
                     </a>
                 </p>
                 <p class="small">
@@ -57,7 +57,7 @@
                 </p>
                 <p class="small">
                     <i class="fa fa-map-marker"></i>
-                    República de Costa Rica #270 int.1 Colonia Cuauhtémoc Norte C.P. 21200
+                    República de Costa Rica #270 Colonia Cuauhtémoc Norte C.P. 21200
                 </p>
             </div>
             <div class="w-full md:w-1/4">

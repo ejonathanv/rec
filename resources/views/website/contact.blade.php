@@ -9,9 +9,11 @@
                     ¿Quieres saber más sobre nuestro trabajo o compartirnos una idea? 
                 </h1>
 
-                <div class="flex items-center justify-center text-5xl text-secondary-500">
-                    <a href="#">
-                        <i class="fab fa-whatsapp"></i>
+                <div class="flex items-center justify-center text-secondary-500">
+                    <a href="https://wa.me/526861549393" target="_blank"
+                        class="flex items-center space-x-3">
+                        <i class="fab fa-whatsapp fa-2x"></i>
+                        <h2>(686) 1549393</h2>
                     </a>
                 </div>
             </div>

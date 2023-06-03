@@ -4,7 +4,7 @@
 
     <x-website.slogan-bar 
         theme="primary"
-        slogan="Entérate del trabajo multidisciplinario que se realiza en el Delta del Río Colorado, de los avances, los retos y de cómo puedes ser parte del esfuerzo por devolverle la vida al río." />
+        slogan="Entérate del trabajo multidisciplinario que se realiza en el Delta del Río Colorado, de los avances, los retos y de cómo puedes ser parte del esfuerzo ambiental." />
 
     <section class="py-10 md:py-16 lg:py-24 bg-white">
         <div class="container">
