@@ -52,7 +52,7 @@
                 <p class="small">
                     <i class="fa fa-envelope"></i>
                     <a href="{{ route('contact') }}">
-                        Contáctenos
+                        Queremos leerte
                     </a>
                 </p>
                 <p class="small">
