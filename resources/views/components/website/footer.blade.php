@@ -96,6 +96,15 @@
                 </ul>
                 <hr class="my-4 border-secondary">
                 <ul class="text-sm list-links">
+                    <li>
+                        <a href="{{ route('policies') }}">
+                            <i class="fa fa-arrow-right"></i>
+                            <span>Políticas de privacidad</span>
+                        </a>
+                    </li>
+                </ul>
+                <hr class="my-4 border-secondary">
+                <ul class="text-sm list-links">
                     @guest
                     <li>
                         <a href="{{ route('login') }}">

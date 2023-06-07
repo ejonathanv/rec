@@ -92,4 +92,8 @@ class WebsiteController extends Controller
 
         return back()->with('success', 'Tu mensaje ha sido enviado con éxito');
     }
+
+    public function policies(){
+        return view('website.policies');
+    }
 }

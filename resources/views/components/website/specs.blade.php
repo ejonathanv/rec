@@ -16,7 +16,7 @@
                 Compromiso ambiental
             </h3>
             <p>
-                Comprometidos con la conservación de nuestro hábitat natural, transformamos ecosistemas en beneficio de cientos de especies de flora y fauna <br> y las comunidades de la región.
+                Comprometidos con la conservación de nuestro hábitat natural, transformamos ecosistemas en beneficio de cientos de especies de <br> flora y fauna y las comunidades de la región.
             </p>
         </div>
 

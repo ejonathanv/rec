@@ -13,6 +13,7 @@ Route::get('/conoce-mas', [WebsiteController::class, 'knowMore'])->name('knowMor
 Route::get('/conoce-mas/{post:slug}', [WebsiteController::class, 'post'])->name('post');
 Route::get('/contacto', [WebsiteController::class, 'contact'])->name('contact');
 Route::post('/contacto', [WebsiteController::class, 'contactPost'])->name('contactPost');
+Route::get('politicas', [WebsiteController::class, 'policies'])->name('policies');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
     Route::redirect('/', '/admin/publicaciones')->name('admin');
