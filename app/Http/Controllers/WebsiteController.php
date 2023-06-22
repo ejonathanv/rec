@@ -88,7 +88,7 @@ class WebsiteController extends Controller
         ]);
 
         Mail::to($request->email)->send(new ThankYouForContactUs($request));
-        Mail::to(env('MAIL_FROM_ADDRESS'))->send(new NewMessage($request));
+        Mail::to(env('MAIL_CONTACT_ADDRESS'))->send(new NewMessage($request));
 
         return back()->with('success', 'Tu mensaje ha sido enviado con éxito');
     }
