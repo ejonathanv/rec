@@ -136,6 +136,8 @@
                 <p class="small">
                     Logramos recuperar espacios naturales degradados por el impacto del cambio climático en la cuenca del Río Colorado, que serán un legado para futuras generaciones.
                 </p>
+                <hr class="my-4 border-secondary">
+                <img src="{{ asset('img/logo_CemefiAFILIADO.png') }}" alt="" class="w-6/12 h-auto">
             </div>
         </div>
     </div>
