@@ -33,7 +33,7 @@
 
                             <div class="w-full md:8/12">
                                 <p class="small">
-                                    {{ $post->created_at->format('d M, Y') }}
+                                    {{ \Carbon\Carbon::parse($post->date)->format('d/m/Y') }}
                                 </p>
                                 <a href="{{ route('posts.show', $post) }}" class="link">
                                     <h3 class="mb-4 text-secondary-500">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Support\Str;
@@ -34,6 +35,7 @@ class PostController extends Controller
     {
         $post = new Post();
         $post->user_id = auth()->user()->id;
+        $post->date = Carbon::parse($request->date);
         $post->title = $request->title;
         $post->resume = $request->resume;
         $post->content = $request->content;
@@ -85,6 +87,7 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
+        $post->date = Carbon::parse($request->date);
         $post->title = $request->title;
         $post->resume = $request->resume;
         $post->content = $request->content;

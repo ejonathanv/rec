@@ -23,6 +23,7 @@ class UpdatePostRequest extends FormRequest
     {
         $post = $this->post;
         return [
+            'date' => 'required|date',
             'title' => 'required|string|min:5|max:100|unique:posts,title,' . $post->id,
             'resume' => 'required|string|min:10|max:250',
             'content' => 'required|string|min:10',
@@ -34,6 +35,8 @@ class UpdatePostRequest extends FormRequest
     public function messages()
     {
         return [
+            'date.required' => 'La fecha es requerida',
+            'date.date' => 'La fecha no es válida',
             'title.required' => 'El título es requerido',
             'title.string' => 'El título debe ser un texto',
             'title.min' => 'El título debe tener al menos 5 caracteres',

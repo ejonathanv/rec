@@ -28,6 +28,18 @@
 
     <div class="form-group">
         <label for="">
+            Fecha:
+        </label>
+        <input type="date" name="date" class="form-control" value="{{ isset($post) ? $post->date : old('date') }}" required>
+        @error('date')
+        <span class="text-red-500 text-xs font-bold">
+            {{ $message }}
+        </span>
+        @enderror
+    </div>
+
+    <div class="form-group">
+        <label for="">
             Título
         </label>
         <input type="text" name="title" class="form-control" value="{{ isset($post) ? $post->title : old('title') }}" required autofocus>
