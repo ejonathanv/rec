@@ -9,7 +9,7 @@ use App\Http\Controllers\WebsiteController;
 
 
 Route::get('actualizar', function () {
-    Artisan::call('migrate');
+    Artisan::call('migrate --force');
     Artisan::call('corregir-fecha');
     
     dd('Se ha actualizado la base de datos');
