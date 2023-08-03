@@ -16,7 +16,7 @@
             <p class="text-xs !m-0 opacity-75 flex items-center space-x-2">
                 <i class="fa fa-calendar-alt"></i>
                 <span>
-                    {{ $post->created_at->format('d M, Y') }}
+                    {{ \Carbon\Carbon::parse($post->date)->format('d M, Y') }}
                 </span>
             </p>
         </div>

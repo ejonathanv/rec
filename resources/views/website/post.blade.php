@@ -16,7 +16,7 @@
                         <p class="small mb-6">
                             <i class="fa fa-calendar-alt fa-sm"></i>
                             <span>
-                                {{ $post->created_at->format('d M, Y') }} | {{ $post->category ? $post->category->name : 'Sin clasificación' }}
+                            {{ \Carbon\Carbon::parse($post->date)->format('d M, Y') }} | {{ $post->category ? $post->category->name : 'Sin clasificación' }}
                             </span>
                         </p>
                         <h1 class="mb-10 text-secondary-500">

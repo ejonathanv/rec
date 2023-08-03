@@ -1,10 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebsiteController;
+
+
+Route::get('actualizar', function () {
+    Artisan::call('migrate');
+    Artisan::call('corregir-fecha');
+    
+    dd('Se ha actualizado la base de datos');
+});
 
 Route::get('/', [WebsiteController::class, 'home'])->name('home');
 Route::get('/quienes-somos', [WebsiteController::class, 'about'])->name('about');
