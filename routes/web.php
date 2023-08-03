@@ -8,12 +8,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WebsiteController;
 
 
-Route::get('actualizar', function () {
-    Artisan::call('migrate --force');
-    Artisan::call('corregir-fecha');
+// Route::get('actualizar', function () {
+//     Artisan::call('migrate --force');
+//     Artisan::call('corregir-fecha');
     
-    dd('Se ha actualizado la base de datos');
-});
+//     dd('Se ha actualizado la base de datos');
+// });
 
 Route::get('/', [WebsiteController::class, 'home'])->name('home');
 Route::get('/quienes-somos', [WebsiteController::class, 'about'])->name('about');
