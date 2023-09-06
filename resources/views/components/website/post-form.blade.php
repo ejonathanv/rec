@@ -108,6 +108,15 @@
                 >
                 Artículos
             </option>
+            <option value="Extensionismo Agroecológico"
+                @if(isset($post) && $post->category)
+                    @if($post->category->name == 'Extensionismo Agroecológico')
+                        selected
+                    @endif
+                @endif
+                >
+                Extensionismo Agroecológico
+            </option>
         </select>
     </div>
 

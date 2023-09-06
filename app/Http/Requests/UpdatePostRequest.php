@@ -28,7 +28,7 @@ class UpdatePostRequest extends FormRequest
             'resume' => 'required|string|min:10|max:250',
             'content' => 'required|string|min:10',
             'cover' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|max:5000',
-            'category' => 'nullable|in:Comunicados,Noticias,Artículos',
+            'category' => 'nullable|in:Comunicados,Noticias,Artículos,Extensionismo Agroecológico',
         ];
     }
 

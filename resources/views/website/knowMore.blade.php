@@ -35,6 +35,10 @@
                         class="@isset($request) @if($request->clasificacion == 'articulos') link @endif @endisset">
                         Artículos
                     </a>
+                    <a href="{{ route('knowMore', ['clasificacion' => 'extensionismo agroecologico']) }}"
+                        class="@isset($request) @if($request->clasificacion == 'extensionismo agroecologico') link @endif @endisset"> 
+                        Extensionismo Agroecológico                       
+                    </a>
                 </nav>
             </div>
             <div>
