@@ -37,9 +37,14 @@
                 <p class="small">
                     Síguenos y compartamos ideas para restaurar el Delta del Río Colorado.
                 </p>
-                <a href="#" class="inline-block mb-4">
-                    <i class="fab fa-facebook fa-2x"></i>
-                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="https://www.facebook.com/restauremoselriocolorado" class="inline-block mb-4" target="_blank">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://twitter.com/Restauremos" class="inline-block mb-4" target="_blank">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                </div>
                 <p class="small">
                     Contáctanos:
                 </p>
