@@ -71,11 +71,14 @@
                                 {{ \Carbon\Carbon::parse($post->date)->format('d M, Y') }} | {{ $post->category ? $post->category->name : 'Sin clasificación' }}
                                 </span>
                             </p>
-                            <h2 class="mb-6">
+                            <h2 class="mb-5">
                                 <a href="{{ route('post', $post->slug) }}" class="text-secondary-500 hover:text-secondary-900 hover:underline">
                                     {{ $post->title }}
                                 </a>
                             </h2>
+                            <p class="mb-5 text-gray-400 text-sm">
+                                Autor: {{ $post->author }}
+                            </p>
                             <h4 class="mb-4">
                                 {{ $post->resume }}
                             </h4>

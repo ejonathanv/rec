@@ -26,6 +26,7 @@
     </div>
     @endif
 
+    <!-- Fecha -->
     <div class="form-group">
         <label for="">
             Fecha:
@@ -38,6 +39,7 @@
         @enderror
     </div>
 
+    <!-- Titulo -->
     <div class="form-group">
         <label for="">
             Título
@@ -50,6 +52,7 @@
         @enderror
     </div>
 
+    <!-- Resumen -->
     <div class="form-group">
         <label for="">
             Resumen
@@ -62,6 +65,7 @@
         @enderror
     </div>
 
+    <!-- Contenido -->
     <div class="form-group">
         <label for="">Contenido</label>
         <input type="hidden" name="content" id="postContent" value="{{ isset($post) ? $post->content : old('content') }}">
@@ -75,6 +79,7 @@
         @enderror
     </div>
 
+    <!-- Clasificacion -->
     <div class="form-group">
         <label for="">
             Classificación
@@ -120,6 +125,20 @@
         </select>
     </div>
 
+    <!-- Autor -->
+    <div class="form-group">
+        <label for="">
+            Autor
+        </label>
+        <input type="text" name="author" class="form-control" value="{{ isset($post) ? $post->author : old('author') }}" required>
+        @error('author')
+        <span class="text-red-500 text-xs font-bold">
+            {{ $message }}
+        </span>
+        @enderror
+    </div>
+
+    <!-- Estatus -->
     <div class="form-group">
         <label class="flex items-center space-x-2">
             <input type="checkbox" name="draft" {{ isset($post) && $post->status == 'draft' ? 'checked' : '' }}>
@@ -129,6 +148,7 @@
         </label>
     </div>
 
+    <!-- Boton -->
     <div>
         <button type="submit" class="btn btn-primary">
             Actualizar

@@ -28,6 +28,7 @@ class StorePostRequest extends FormRequest
             'content' => 'required|string|min:10',
             'cover' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|max:5000',
             'category' => 'nullable|in:Comunicados,Noticias,Artículos,Extensionismo Agroecológico',
+            'author' => 'required|string|min:5|max:100',
         ];
     }
 
@@ -52,6 +53,9 @@ class StorePostRequest extends FormRequest
             'cover.mimes' => 'El archivo debe ser una imagen de tipo: jpg, jpeg, png, gif, svg',
             'cover.max' => 'El archivo debe pesar máximo 5MB',
             'category.in' => 'La categoría no es válida',
+            'author.required' => 'El autor es requerido',
+            'author.string' => 'El autor debe ser un texto',
+            'author.min' => 'El autor debe tener al menos 5 caracteres',
         ];
     }
 }

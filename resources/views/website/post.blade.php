@@ -19,9 +19,12 @@
                             {{ \Carbon\Carbon::parse($post->date)->format('d M, Y') }} | {{ $post->category ? $post->category->name : 'Sin clasificación' }}
                             </span>
                         </p>
-                        <h1 class="mb-10 text-secondary-500">
+                        <h1 class="mb-5 text-secondary-500">
                             {{ $post->title }}
                         </h1>
+                        <p class="mb-5 text-gray-400 text-sm">
+                            Autor: {{ $post->author }}
+                        </p>
                         <h3 class="mb-10">
                             {{ $post->resume }}
                         </h3>

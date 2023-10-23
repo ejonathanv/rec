@@ -41,6 +41,7 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->slug = Str::slug($request->title);
         $post->status = $request->draft ? 'draft' : 'published';
+        $post->author = $request->author;
 
         if($request->has('category')){
             $category = Category::firstOrCreate([
@@ -93,6 +94,7 @@ class PostController extends Controller
         $post->content = $request->content;
         $post->slug = Str::slug($request->title);
         $post->status = $request->draft ? 'draft' : 'published';
+        $post->author = $request->author;
         
         if($request->has('category')){
             $category = Category::firstOrCreate([

@@ -40,6 +40,9 @@
                                         {{ $post->title }}
                                     </h3>
                                 </a>
+                                <p class="mb-5 text-gray-400 text-sm">
+                                    Autor: {{ $post->author }}
+                                </p>
                                 <h4 class="mb-4">
                                     {{ $post->resume }}
                                 </h4>
