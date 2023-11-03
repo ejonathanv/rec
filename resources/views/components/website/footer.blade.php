@@ -62,7 +62,7 @@
                 </p>
                 <p class="small">
                     <i class="fa fa-map-marker"></i>
-                    República de Costa Rica #270 Colonia Cuauhtémoc Norte C.P. 21200
+                    República de Costa Rica #270 Colonia Cuauhtémoc Norte, Mexicali, Baja California, C.P. 21200
                 </p>
             </div>
             <div class="w-full md:w-1/4">
