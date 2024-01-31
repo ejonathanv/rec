@@ -22,6 +22,12 @@ class PostFactory extends Factory
         $title = $this->faker->sentence();
         $cover = 'https://picsum.photos/1200/' . rand(700, 1200);
         $category = Category::inRandomOrder()->first();
+        $type = $this->faker->randomElement(['post', 'pdf']);
+        if($type == 'pdf'){
+            $cover = null;
+        }else{
+            $pdfPath = 'pdfs/' . $this->faker->word() . '.pdf';
+        }
 
         return [
             'user_id' => User::factory(),
@@ -29,9 +35,12 @@ class PostFactory extends Factory
             'title' => $title,
             'resume' => $this->faker->sentence(),
             'content' => $this->faker->paragraph(),
-            'cover' => $cover,
+            'cover' => $cover ?? null,
             'slug' => Str::slug($title),
             'status' => $this->faker->randomElement(['draft', 'published']),
+            'type' => $type,
+            'pdfPath' => $pdfPath ?? null,
+            'date' => $this->faker->dateTimeBetween('-1 year', 'now')
         ];
     }
 }

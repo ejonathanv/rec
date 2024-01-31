@@ -7,23 +7,24 @@
 <form action="{{ $route }}" method="POST" class="mt-4" enctype="multipart/form-data">
     @csrf
     @method($method)
+
+    <!-- Agregar documento PDF -->
     <div class="form-group">
         <label for="">
-            Portada
+            Documento PDF
         </label>
-        <div>
-            <input type="file" name="cover" accept="image/*">
+        <div style="margin-top: 0.5rem;">
+            <input type="file" name="pdf" accept="application/pdf">
         </div>
-        @error('cover')
+        @error('pdf')
         <span class="text-red-500 text-xs font-bold">
             {{ $message }}
         </span>
         @enderror
     </div>
 
-    @if(isset($post) && $post->cover)
-    <div class="post-cover shadow rounded lg" style="background-image: url('{{ asset('uploads/' . $post->cover) }}')">
-    </div>
+    @if(isset($article) && $article->pdfPath)
+    <iframe src="{{ asset('pdfs/' . $article->pdfPath) }}" frameborder="0" class="w-full h-96"></iframe>
     @endif
 
     <!-- Fecha -->
@@ -31,7 +32,7 @@
         <label for="">
             Fecha:
         </label>
-        <input type="date" name="date" class="form-control" value="{{ isset($post) ? $post->date : old('date') }}" required>
+        <input type="date" name="date" class="form-control" value="{{ isset($article) ? $article->date : old('date') }}" required>
         @error('date')
         <span class="text-red-500 text-xs font-bold">
             {{ $message }}
@@ -44,7 +45,7 @@
         <label for="">
             Título
         </label>
-        <input type="text" name="title" class="form-control" value="{{ isset($post) ? $post->title : old('title') }}" required autofocus>
+        <input type="text" name="title" class="form-control" value="{{ isset($article) ? $article->title : old('title') }}" required autofocus>
         @error('title')
         <span class="text-red-500 text-xs font-bold">
             {{ $message }}
@@ -57,22 +58,8 @@
         <label for="">
             Resumen
         </label>
-        <input type="text" name="resume" class="form-control" value="{{ isset($post) ? $post->resume : old('resume') }}" required>
+        <input type="text" name="resume" class="form-control" value="{{ isset($article) ? $article->resume : old('resume') }}" required>
         @error('resume')
-        <span class="text-red-500 text-xs font-bold">
-            {{ $message }}
-        </span>
-        @enderror
-    </div>
-
-    <!-- Contenido -->
-    <div class="form-group">
-        <label for="">Contenido</label>
-        <input type="hidden" name="content" id="postContent" value="{{ isset($post) ? $post->content : old('content') }}">
-        <div id="editor">
-            {!! isset($post) ? $post->content : old('content') !!}
-        </div>
-        @error('content')
         <span class="text-red-500 text-xs font-bold">
             {{ $message }}
         </span>
@@ -87,8 +74,8 @@
         <select name="category" class="form-control" required>
             <option value="">Seleccione una opción</option>
             <option value="Comunicados"
-                @if(isset($post) && $post->category) 
-                    @if($post->category->name == 'Comunicados')
+                @if(isset($article) && $article->category) 
+                    @if($article->category->name == 'Comunicados')
                         selected
                     @endif
                 @endif
@@ -96,8 +83,8 @@
                 Comunicados
             </option>
             <option value="Noticias"
-                @if(isset($post) && $post->category)                
-                    @if($post->category->name == 'Noticias')
+                @if(isset($article) && $article->category)                
+                    @if($article->category->name == 'Noticias')
                         selected
                     @endif
                 @endif
@@ -105,8 +92,8 @@
                 Noticias
             </option>
             <option value="Artículos"
-                @if(isset($post) && $post->category)
-                    @if($post->category->name == 'Artículos')
+                @if(isset($article) && $article->category)
+                    @if($article->category->name == 'Artículos')
                         selected
                     @endif
                 @endif
@@ -114,8 +101,8 @@
                 Artículos
             </option>
             <option value="Extensionismo Agroecológico"
-                @if(isset($post) && $post->category)
-                    @if($post->category->name == 'Extensionismo Agroecológico')
+                @if(isset($article) && $article->category)
+                    @if($article->category->name == 'Extensionismo Agroecológico')
                         selected
                     @endif
                 @endif
@@ -130,7 +117,7 @@
         <label for="">
             Autor
         </label>
-        <input type="text" name="author" class="form-control" value="{{ isset($post) ? $post->author : old('author') }}" required>
+        <input type="text" name="author" class="form-control" value="{{ isset($article) ? $article->author : old('author') }}" required>
         @error('author')
         <span class="text-red-500 text-xs font-bold">
             {{ $message }}
@@ -141,7 +128,7 @@
     <!-- Estatus -->
     <div class="form-group">
         <label class="flex items-center space-x-2">
-            <input type="checkbox" name="draft" {{ isset($post) && $post->status == 'draft' ? 'checked' : '' }}>
+            <input type="checkbox" name="draft" {{ isset($article) && $article->status == 'draft' ? 'checked' : '' }}>
             <span>
                 Guardar como borrador
             </span>
@@ -158,7 +145,7 @@
 @if($method == 'PUT')
 <hr class="my-8 border-b-2 border-secondary">
 
-<form action="{{ route('posts.destroy', $post) }}" method="POST" class="mt-4" onsubmit="return confirm('¿Estás seguro de eliminar esta publicación?, esta acción no se puede deshacer')">
+<form action="{{ route('pdf-articles-destroy', $article) }}" method="POST" class="mt-4" onsubmit="return confirm('¿Estás seguro de eliminar este artículo?, esta acción no se puede deshacer')">
     @csrf
     @method('DELETE')
     <button type="submit" class="btn btn-danger">

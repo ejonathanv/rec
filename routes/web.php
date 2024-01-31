@@ -28,6 +28,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], functi
     Route::resource('publicaciones', PostController::class)->names('posts')->parameters(['publicaciones' => 'post']);
     Route::get('cuenta', [ProfileController::class, 'account'])->name('account');
     Route::put('cuenta/actualizar', [ProfileController::class, 'updateAccount'])->name('update-account');
+    Route::get('articulos-pdf', [AdminController::class, 'pdfArticles'])->name('pdf-articles');
+    Route::get('articulos-pdf/create', [AdminController::class, 'pdfArticlesCreate'])->name('pdf-articles-create');
+    Route::get('articulos-pdf/{article:slug}', [AdminController::class, 'pdfArticlesShow'])->name('pdf-articles-show');
+    Route::post('articulos-pdf', [AdminController::class, 'pdfArticlesStore'])->name('pdf-articles-store');
+    Route::put('articulos-pdf/{article:slug}', [AdminController::class, 'pdfArticlesUpdate'])->name('pdf-articles-update');
+    Route::delete('articulos-pdf/{article:slug}', [AdminController::class, 'pdfArticlesDestroy'])->name('pdf-articles-destroy');
 });
 
 require __DIR__.'/auth.php';

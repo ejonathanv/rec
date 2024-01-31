@@ -4,6 +4,14 @@
     Ver el sitio web
 </a>
 
+<a href="{{ route('admin') }}">
+    Publicaciones
+</a>
+
+<a href="{{ route('pdf-articles') }}">
+    Artículos PDF
+</a>
+
 <a href="{{ route('account') }}" class="@if(request()->routeIs('account')) active @endif">
     Mi cuenta
 </a>

@@ -10,8 +10,13 @@
         <div class="container">
             <div class="flex flex-col md:flex-row space-y-7 md:space-y-0 md:space-x-10">
                 <div class="w-full md:w-8/12">
+                    @if($post->type == 'post')
                     <div class="post-cover xl shadow rounded" style="background-image: url({{ asset('uploads/' . $post->cover) }})">
                     </div>
+                    @elseif($post->type == 'pdf')
+                    <iframe src="{{ asset('pdfs/' . $post->pdfPath) }}" frameborder="0" class="w-full" style="height: 500px;">
+                    </iframe>
+                    @endif
                     <div class="mt-10 md:mt-16">
                         <p class="small mb-6">
                             <i class="fa fa-calendar-alt fa-sm"></i>

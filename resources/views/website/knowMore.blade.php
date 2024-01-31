@@ -58,13 +58,19 @@
 
                 @foreach($posts as $post)
                     <div class="flex flex-col md:flex-row space-y-7 md:space-y-0 items-start md:space-x-7 mb-16">
+                        @if($post->type == 'post')
                         <div class="w-full md:w-4/12">
                             <a href="{{ route('post', $post->slug) }}">
                                 <div class="post-cover lg shadow rounded" style="background-image: url({{ asset('uploads/' . $post->cover) }})">
                                 </div>
                             </a>
                         </div>
+                        @endif
+                        @if($post->type = 'post')
                         <div class="w-full md:w-8/12">
+                        @else
+                        <div class="w-full">
+                        @endif
                             <p class="text-gray-400 flex items-center space-x-2">
                                 <i class="fa fa-calendar-alt fa-sm"></i>
                                 <span>
