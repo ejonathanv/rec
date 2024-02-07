@@ -65,12 +65,14 @@
                                 </div>
                             </a>
                         </div>
-                        @endif
-                        @if($post->type = 'post')
-                        <div class="w-full md:w-8/12">
                         @else
-                        <div class="w-full">
+                        <div class="w-full md:w-4/12">
+                            <a href="{{ route('post', $post->slug) }}">
+                                <img src="{{ asset('img/blog_agro_img.png') }}" alt="{{ $post->title }}" class="rounded-lg">
+                            </a>
+                        </div>
                         @endif
+                        <div class="w-full md:w-8/12">
                             <p class="text-gray-400 flex items-center space-x-2">
                                 <i class="fa fa-calendar-alt fa-sm"></i>
                                 <span>
