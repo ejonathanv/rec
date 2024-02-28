@@ -5,23 +5,41 @@
         </h1>
 
         <ul class="flex flex-wrap md:flex-nowrap md:flex-row items-center sponsors_logos justify-center">
+            <!-- Alianza Revive el Río Colorado -->
             <li class="w-1/3 px-2">
-                <img src="{{ asset('img/logos/mono/alianza_revive_el_rio_colorado.png') }}" alt="Alianza Revive el Río Colorado - Logo" class="w-full h-auto">
+                <a href="https://raisetheriver.org/" target="_blank">
+                    <img src="{{ asset('img/logos/mono/alianza_revive_el_rio_colorado.png') }}" alt="Alianza Revive el Río Colorado - Logo" class="w-full h-auto">
+                </a>
             </li>
+            <!-- Audubon -->
             <li class="w-1/3 px-2">
-                <img src="{{ asset('img/logos/mono/audubon.png') }}" alt="Audubon - Logo" class="w-full h-auto">
+                <a href="https://www.audubon.org/" target="_blank">
+                    <img src="{{ asset('img/logos/mono/audubon.png') }}" alt="Audubon - Logo" class="w-full h-auto">
+                </a>
             </li>
+            <!-- The Nature Conservancy -->
             <li class="w-1/3 px-2">
-                <img src="{{ asset('img/logos/mono/the_nature_conservancy.jpg') }}" alt="The Nature Conservancy - Logo" class="w-full h-auto">
+                <a href="https://www.nature.org/en-us/" target="_blank">
+                    <img src="{{ asset('img/logos/mono/the_nature_conservancy.jpg') }}" alt="The Nature Conservancy - Logo" class="w-full h-auto">
+                </a>
             </li>
+            <!-- Sonoran Institute -->
             <li class="w-1/3 px-2">
-                <img src="{{ asset('img/logos/mono/sonoran_institute.jpg') }}" alt="Sonoran Institute - Logo" class="w-full h-auto">
+                <a href="https://sonoraninstitute.org/" target="_blank">
+                    <img src="{{ asset('img/logos/mono/sonoran_institute.jpg') }}" alt="Sonoran Institute - Logo" class="w-full h-auto">
+                </a>
             </li>
+            <!-- Redford Center -->
             <li class="w-1/3 px-2">
-                <img src="{{ asset('img/logos/mono/redford_center.png') }}" alt="Redford Center - Logo" class="w-full h-auto">
+                <a href="https://www.redfordcenter.org/" target="_blank">
+                    <img src="{{ asset('img/logos/mono/redford_center.png') }}" alt="Redford Center - Logo" class="w-full h-auto">
+                </a>
             </li>
+            <!-- Pronatura -->
             <li class="w-1/3 px-2">
-                <img src="{{ asset('img/logos/mono/pronatura.png') }}" alt="Pronatura - Logo" class="w-full h-auto">
+                <a href="https://pronatura-noroeste.org/" target="_blank">
+                    <img src="{{ asset('img/logos/mono/pronatura.png') }}" alt="Pronatura - Logo" class="w-full h-auto">
+                </a>
             </li>
         </ul>
     </div>
