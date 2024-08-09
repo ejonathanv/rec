@@ -88,6 +88,9 @@
                             @enderror
                         </div>
 
+                        {!! NoCaptcha::renderJs() !!}
+                        {!! NoCaptcha::display() !!}
+
                         <button type="submit" class="btn btn-primary w-full md:w-auto mt-5">
                             Enviar mensaje
                         </button>

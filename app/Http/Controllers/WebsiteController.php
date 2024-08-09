@@ -72,7 +72,8 @@ class WebsiteController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required|string|min:5|max:100',
-            'message' => 'required|string|min:10|max:500'
+            'message' => 'required|string|min:10|max:500',
+            'g-recaptcha-response' => 'required|captcha'
         ], [
             'name.required' => 'El campo nombre es obligatorio',
             'email.required' => 'El campo email es obligatorio',
@@ -84,7 +85,9 @@ class WebsiteController extends Controller
             'message.required' => 'El campo mensaje es obligatorio',
             'message.string' => 'El campo mensaje debe ser una cadena de texto',
             'message.min' => 'El campo mensaje debe tener al menos 10 caracteres',
-            'message.max' => 'El campo mensaje debe tener máximo 500 caracteres'
+            'message.max' => 'El campo mensaje debe tener máximo 500 caracteres',
+            'g-recaptcha-response.required' => 'El campo captcha es obligatorio',
+            'g-recaptcha-response.captcha' => 'El captcha no es válido'
         ]);
 
         Mail::to($request->email)->send(new ThankYouForContactUs($request));
