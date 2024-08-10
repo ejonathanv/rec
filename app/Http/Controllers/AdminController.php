@@ -101,6 +101,17 @@ class AdminController extends Controller
             $article->save();
         }
 
+        if($request->has('cover')){
+            // We need to upload the $request->cover img and store the image in the public/uploads folder
+            $cover = $request->file('cover');
+            $coverName = time() . '_' . $cover->getClientOriginalName();
+            $cover->move(public_path('uploads'), $coverName);
+    
+            // We need to update the $post->cover with the new image name
+            $article->cover = $coverName;
+            $article->save();
+        }
+
         if($request->has('pdf')){
             // We need to upload the $request->pdf pdf and store the pdf in the public/pdfs folder
             $pdf = $request->file('pdf');

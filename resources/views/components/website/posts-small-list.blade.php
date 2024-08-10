@@ -6,8 +6,13 @@
     @foreach($posts as $post)
     <a href="{{ route('post', $post->slug) }}" class="flex items-stretch space-x-4">
         <div>
-            <div class="post-thumb" style="background-image: url({{ asset('uploads/' . $post->cover) }})">
+            @if($post->cover)
+            <div class="post-thumb" style="background-image: url('{{ asset('uploads/' . $post->cover) }}')">
             </div>
+            @else
+            <div class="post-thumb" style="background-image: url('{{ asset('img/blog_agro_img.png') }}')">
+            </div>
+            @endif
         </div>
         <div>
             <p class="small !mb-2">

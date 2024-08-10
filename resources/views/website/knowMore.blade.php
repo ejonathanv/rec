@@ -61,14 +61,19 @@
                         @if($post->type == 'post')
                         <div class="w-full md:w-4/12">
                             <a href="{{ route('post', $post->slug) }}">
-                                <div class="post-cover lg shadow rounded" style="background-image: url({{ asset('uploads/' . $post->cover) }})">
+                                <div class="post-cover lg shadow rounded" style="background-image: url('{{ asset('uploads/' . $post->cover) }}')">
                                 </div>
                             </a>
                         </div>
                         @else
                         <div class="w-full md:w-4/12">
                             <a href="{{ route('post', $post->slug) }}">
+                                @if($post->cover)
+                                <div class="post-cover lg shadow rounded" style="background-image: url('{{ asset('uploads/' . $post->cover) }}')">
+                                </div>
+                                @else
                                 <img src="{{ asset('img/blog_agro_img.png') }}" alt="{{ $post->title }}" class="rounded-lg">
+                                @endif
                             </a>
                         </div>
                         @endif

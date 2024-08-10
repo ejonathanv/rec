@@ -8,6 +8,26 @@
     @csrf
     @method($method)
 
+    <!-- Portada del artículo -->
+    <div class="form-group">
+        <label for="">
+            Portada
+        </label>
+        <div>
+            <input type="file" name="cover" accept="image/*">
+        </div>
+        @error('cover')
+        <span class="text-red-500 text-xs font-bold">
+            {{ $message }}
+        </span>
+        @enderror
+    </div>
+
+    @if(isset($article) && $article->cover)
+        <div class="post-cover shadow rounded lg" style="background-image: url('{{ asset('uploads/' . $article->cover) }}')">
+        </div>
+    @endif
+
     <!-- Agregar documento PDF -->
     <div class="form-group">
         <label for="">
