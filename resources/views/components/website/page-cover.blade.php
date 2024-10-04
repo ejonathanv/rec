@@ -19,7 +19,7 @@
                 <div class="container">
                     <div class="w-9/12 mx-auto">
                         <h2>
-                            Presa de Morelos
+                            Presa Morelos
                         </h2>
                     </div>
                 </div>
