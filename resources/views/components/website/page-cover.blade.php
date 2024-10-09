@@ -1,13 +1,21 @@
 <section class="flex items-center justify-center bg-primary bg-cover bg-no-repeat bg-bottom md:bg-fixed relative" x-data="init_owl_carousel()">
     <div class="owl-carousel owl-theme h-full">
+
+        <!-- Mapa -->
+        <div class="item h-full w-full" style="background-image: url('{{ asset('img/slider/4.jpg') }}');">
+            <div class="item-content">
+                <div class="container">
+                    <div class="w-9/12 mx-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Ciénega de Santa Clara -->
         <div class="item h-full w-full" style="background-image: url('{{ asset('img/slider/2.jpg') }}');">
             <div class="item-content">
                 <div class="container">
                     <div class="w-9/12 mx-auto">
-                        <h2>
-                            Ciénega de Santa Clara
-                        </h2>
                     </div>
                 </div>
             </div>
@@ -18,9 +26,6 @@
             <div class="item-content">
                 <div class="container">
                     <div class="w-9/12 mx-auto">
-                        <h2>
-                            Presa Morelos
-                        </h2>
                     </div>
                 </div>
             </div>
@@ -31,12 +36,6 @@
             <div class="item-content">
                 <div class="container">
                     <div class="w-9/12 mx-auto">
-                        <h2>
-                            El Chausse
-                        </h2>
-                        <h4>
-                            Sitio de restauración
-                        </h4>
                     </div>
                 </div>
             </div>
